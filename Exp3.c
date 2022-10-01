@@ -79,7 +79,7 @@ void addBefore(int value,int item){
 
 }
 
-void delete(int n){
+void deleteRandom(int n){
 
     struct node *temp,*p;
     if(last==NULL){
@@ -170,7 +170,7 @@ void main(){
     insertEnd(49);
     insertEnd(75);
     display();
-    delete(87);
+    deleteRandom(87);
     deleteFirst();
     deleteLast();
     display();
