@@ -93,13 +93,7 @@ void delete(int n){
         free(temp);
         return;
     }
-    //deletion of first node;
-    if(last->next->data==n){
-        temp = last->next;
-        last->next = temp->next;
-        free(temp);
-        return;
-    }
+    
     //deletion of random node;
     p = last->next;
     while(p->next!=last){
@@ -114,15 +108,45 @@ void delete(int n){
         p = p->next;
 
     }
-    //deletion of last node;
-    if(last->data==n){
-        temp = last;
-        p->next = last->next;
-        last = p;
-        free(temp);
+    
+    printf("%d element does not exist in the linked list\n",n);
+}
+
+void deleteFirst()
+{
+
+    struct node *temp;
+    if(last==NULL)
+    {
+        printf("List is empty\n");
         return;
     }
-    printf("%d element does not exist in the linked list\n",n);
+    temp = last->next;
+    last->next = temp->next;
+    free(temp);
+
+}
+
+void deleteLast()
+{
+
+    struct node *temp,*p;
+    p = last->next;
+    if(last==NULL)
+    {
+        printf("List is empty\n");
+        return;
+    }
+    while(p->next!=last)
+    {
+        p = p->next;
+    }
+    temp = last;
+    p->next = last->next;
+    last = p;
+    free(temp);
+
+
 }
 
 
@@ -143,7 +167,11 @@ void main(){
     insertBeg(47);
     addAfter(87,47);
     addBefore(98,87);
+    insertEnd(49);
+    insertEnd(75);
     display();
     delete(87);
+    deleteFirst();
+    deleteLast();
     display();
 }
