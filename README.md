@@ -1,2 +1,2 @@
 # DSAExperiments
-Will upload the remaining experiments by Sunday Afternoon;
+If you encounter an error handle it;
