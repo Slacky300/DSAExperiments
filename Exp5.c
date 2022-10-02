@@ -196,11 +196,11 @@ void main()
     printf("preOrder : ");
     preorder(root);
     printf("\n");
-        printf("posOrder : ");
+    printf("posOrder : ");
 
     postorder(root);
     printf("\n");
-        printf("inOrder : ");
+    printf("inOrder : ");
 
     inorder(root);
 
