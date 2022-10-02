@@ -164,14 +164,33 @@ void display(){
 
 void main(){
 
+    printf("Front insertion : ");
     insertBeg(47);
+    display();
+    printf("After insertion : ");
+
     addAfter(87,47);
+    display();
+    printf("Before insertion : ");
+
     addBefore(98,87);
-    insertEnd(49);
+    display();
+    printf("End insertion : ");
+
+
+
     insertEnd(75);
     display();
+    printf("Random deletion : ");
+
     deleteRandom(87);
+    display();
+    printf("Head deletion : ");
+
     deleteFirst();
+    display();
+    printf("Last deletion : ");
+
     deleteLast();
     display();
 }
