@@ -160,7 +160,7 @@ void removeLast()
     if(head==NULL)
     {
         printf("Linked list is empty\n");
-        return head;
+        return;
     }
     p = head;
     while(p->next->next!=NULL)
@@ -208,21 +208,28 @@ void deleteSpecific(struct node *head,int value)
 
 void main()
 {
-
+    printf("Head Insertion : ");
     head = addAtBeg(head,48);
     display();
+    printf("After Insertion : ");
     head = insertAfter(head,56,48);
     display();
+    printf("Before Insertion : ");
     head = insertBefore(head,72,56);
     display();
+    printf("Insert at specified index : ");
     head = insertAtIndex(head,1,92);
     display();
+    printf("End Insertion : ");
     head = addAtEnd(head,64);
     display();
+    printf("Head deletion : ");
     removeHead();
     display();
+    printf("Last element deletion : ");
     removeLast();
     display();
+    printf("Specified Element deletion : ");
     deleteSpecific(head,72);
     display();
 
