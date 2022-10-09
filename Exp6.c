@@ -21,7 +21,8 @@ void addEdge(int a[][n],int i,int j){
 }
 
 void printAdjMat(int a[][n]){
-
+    
+    printf("The adjacency matrix for the following graph : \n");
     for(int i = 0;i<n;i++){
         for(int j = 0;j<n;j++){
             printf("%d ",a[i][j]);
@@ -40,9 +41,9 @@ void main(){
     createGraph(a);
     for(int i = 0;i<maxEdges;i++){
 
-        printf("Enter edge %d(0 0) to quit : ",i);
+        printf("Enter edge %d(-1 -1) to quit : ",i);
         scanf("%d%d",&source,&destiny);
-        if(source==0 && destiny==0){
+        if(source==-1 && destiny==-1){
             break;
         }
         if(source>n||destiny>n||source<0||destiny<0){
