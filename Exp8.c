@@ -43,6 +43,7 @@ void main(){
     printf("Enter the expression : ");
     scanf("%s",expression);
     e = expression;
+    printf("The postfix expression : ");
     while(*e != '\0'){
         if(isalnum(*e)){
             printf("%c",*e);
