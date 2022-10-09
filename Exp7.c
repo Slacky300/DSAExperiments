@@ -137,7 +137,7 @@ void heapSort(int arr[], int n)
 
 void display(int a[],int n)
 {
-
+    printf("Sorted array : ");
     for(int i = 0; i<n; i++)
     {
         printf("%d ",a[i]);
@@ -151,13 +151,23 @@ void main()
 
 
     int a[] = {41,25,1,96,87,24};
+    int b[] = {57,20,14,58,96,15,21};
+    int c[] = {44,87,14,20,36,74,86,85};
+    int d[] = {87,20,14,67,52,31,78};
     int v = sizeof(a)/sizeof(a[0]);
-    printf("Sorted array : ");
-    //bubbleSort(a,v);
-    //quickSort(a,0,v-1);
-    //insertionSort(a,v);
-    heapSort(a,v);
-
+    int w = sizeof(b)/sizeof(b[0]);
+    int x = sizeof(c)/sizeof(c[0]);
+    int y = sizeof(d)/sizeof(d[0]);
+    
+    bubbleSort(a,v);
     display(a,v);
+    quickSort(b,0,w-1);
+    display(b,w);
+    insertionSort(c,x);
+    display(c,x);
+    heapSort(d,y);
+    display(d,y);
+    
+    
 
 }
