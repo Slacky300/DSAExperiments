@@ -86,3 +86,92 @@ void main(){
 
         printf("-------End of Stack Operations-----\n");
 }
+//For turbo C
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+
+struct node{
+
+	int data;
+	struct node *next;
+
+
+}*head= NULL,*temp;
+
+void push(int n){
+
+	temp = (struct node *)malloc(sizeof(struct node));
+	temp->data = n;
+	if(head == NULL){
+		head = temp;
+		temp->next = NULL;
+
+	}else{
+		temp->next = head;
+		head = temp;
+
+	}
+	printf("%d element pushed onto the stack\n",n);
+}
+void pop(){
+
+
+	if(head==NULL){
+		printf("Stack Underflow\n");
+	}else{
+	       printf("%d element popped\n", head->data);
+	       temp = head;
+	       head = head->next;
+	       free(temp);
+	}
+
+}
+
+void peek(){
+
+    printf("%d ",head->data);
+}
+
+void display(){
+
+	if(head == NULL){
+
+		printf("Stack Underflow\n");
+	}else{
+
+		temp = head;
+		while(temp!=NULL){
+
+			printf("%d->",temp->data);
+			temp =temp->next;
+		}
+		printf("\n");
+	}
+
+}
+void main(){
+
+	int ch = 0;
+    clrscr();
+    printf("--------Stack Operations-------\n");
+    while(1){
+        printf("1.Pop\n2.Push\n3.Peek\n4.Display\n5.Exit\n");
+        scanf("%d",&ch);
+        if(ch==1){
+            pop();
+        }else if(ch==2){
+            push();
+        }else if(ch==3){
+            peek();
+        }else if(ch==4){
+            display();
+        }else if(ch==5){
+            break;
+        }else{
+            printf("Invalid choice\n");
+        }
+
+    }
+	getch();
+}
