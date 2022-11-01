@@ -84,3 +84,36 @@ void main(){
     dfs(adj,visited,s);
     getch();
 }
+//Alternate code:
+#include <stdio.h>
+
+#define n 5
+
+void dfs(int i, int adj[][n], int visited[]) {
+
+  printf("%d ", i);
+  visited[i] = 1;
+  for (int j = 0; j < 5; j++) {
+    if (adj[i][j] && !visited[j]) {
+      dfs(j, adj, visited);
+    }
+  }
+}
+
+void main() {
+
+  int adj[n][n], vis[n];
+  int s, i, j;
+  for (i = 0; i < n; i++) {
+    for (j = 0; j < n; j++) {
+      scanf("%d", & adj[i][j]);
+    }
+  }
+  for (i = 0; i < n; i++) {
+    vis[i] = 0;
+  }
+  printf("Enter source : ");
+  scanf("%d", & s);
+  dfs(s, adj, vis);
+
+}
